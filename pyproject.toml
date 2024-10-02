@@ -1,0 +1,33 @@
+[project]
+name = "clashai"
+description = "An API wrapper for the ClashAI API"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+readme = "README.md"
+keywords = ["clash-ai", "clashai", "api", "clashapi", "clashai", "ai", "gpt", "llama", "mixtral", "gemini"]
+authors = [
+    { name = "lndrdev" }, { name="invalidsian" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dynamic = ["dependencies", "version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "clashai.__version__"}
+dependencies = {file = "requirements.txt"}
+
+[project.urls]
+GitHub = "https://github.com/clashai/clashai"
+Documentation = "https://clashai.readthedocs.io"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
