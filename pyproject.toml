@@ -6,7 +6,7 @@ license = {text = "MIT"}
 readme = "README.md"
 keywords = ["clash-ai", "clashai", "api", "clashapi", "clashai", "ai", "gpt", "llama", "mixtral", "gemini"]
 authors = [
-    { name = "lndrdev" }, { name="invalidsian" }
+    { name = "lndrdev" }, { name="invalidsian" }, {name="Julianwe17"}
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
