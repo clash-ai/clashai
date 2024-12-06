@@ -32,3 +32,11 @@ class Completions:
         }
         response = requests.post(url, headers=headers, json=payload)
         return response.json()
+
+class Models:
+    def __init__(self, base_url: str = None):
+        self.base_url = base_url if base_url else "https://api.clashai.eu"
+        
+    def get():
+        response = requests.get("https://api.clashai.eu/v1/models")
+        return response.json()
