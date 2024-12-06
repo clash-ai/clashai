@@ -9,6 +9,12 @@ class Client:
         self.base_url = base_url if base_url else "https://api.clashai.eu"
         self.chat = Chat(self.api_key, self.base_url)
 
+    def models(self):
+        endpoint = "v1/models"
+        url = f"{self.base_url}/{endpoint}"
+        response = requests.get(url) # , headers={"Authorization": f"Bearer {self.api_key}"}
+        return response.json()
+
 class Chat:
     def __init__(self, api_key: str = None, base_url: str = None):
         self.completions = Completions(api_key, base_url)
@@ -31,12 +37,4 @@ class Completions:
             "Content-Type": "application/json"
         }
         response = requests.post(url, headers=headers, json=payload)
-        return response.json()
-
-class Models:
-    def __init__(self, base_url: str = None):
-        self.base_url = base_url if base_url else "https://api.clashai.eu"
-        
-    def get():
-        response = requests.get("https://api.clashai.eu/v1/models")
         return response.json()
