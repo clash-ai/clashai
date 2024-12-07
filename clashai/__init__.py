@@ -9,6 +9,14 @@ class Client:
         self.base_url = base_url if base_url else "https://api.clashai.eu"
         self.chat = Chat(self.api_key, self.base_url)
 
+    def models(self):
+        # * Gets the models json located at api.clashai.eu/v1/models
+        # ! Does not send API key as it's not required.
+        endpoint = "v1/models"
+        url = f"{self.base_url}/{endpoint}"
+        response = requests.get(url) # , headers={"Authorization": f"Bearer {self.api_key}"}
+        return response.json()
+
 class Chat:
     def __init__(self, api_key: str = None, base_url: str = None):
         self.completions = Completions(api_key, base_url)
